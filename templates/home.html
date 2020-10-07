@@ -1,11 +1,4 @@
 {% load socialaccount %}
-{{random}}
-
-<!-- {% import requests
-    r1 = requests.get('https://api.twitter.com/2/tweets/search/recent?query=from:nagpal_harshita')
-    print(r1.json())
-    %} -->
-
 
 
 <h1>Reddit Top Links</h1>
@@ -16,29 +9,12 @@
     {% for account in user.socialaccount_set.all %}
         <p>Welcome {{account.extra_data.title}}! Your username is u/{{account}}</p> 
         <p>Your karma is: {{ account.extra_data.total_karma }}</p>
-        {{account.extra_data}}
+    
 
 {% endfor %}
 
-<!-- <p> and here we have https://api.twitter.com/2/tweets/search/recent?query=from:{{user}}</p> -->
-
-<!-- 
-<p>Thank you, <strong>{{ name }}</strong>, for authorizing twauth-web an access token for <a href="https://twitter.com/{{ screen_name }}">@{{
-    screen_name }}</a>. We've successfully received your access token and confirmed it by retrieving some basic details
-on your behalf from the Twitter API. Yay!</p>
-<p>Here is what we pulled from the API on your behalf:</p>
-<ul> -->
-<!-- <li>You have Tweeted <span class="label label-success">{{ user.followers }}</span> times.</li>
-<li>You have <span class="label label-success">{{ followers_count }}</span> followers.</li>
-<li>You follow <span class="label label-success">{{ friends_count }}</span> users.</li>
-</ul> -->
-
-<!-- <a href="https://api.twitter.com/2/tweets/search/recent?query=from:{{user}} ">click here</a> -->
 
 {% else %}
-<!-- <a href="{% provider_login_url 'twitter' %}">Login with Twitter</a> -->
-
-<!--       href="http://127.0.0.1:8000/accounts/login/?next=/"  -->
 <a   href="{% provider_login_url 'reddit' %}" >Login with Reddit</a>
 
 {% endif %}
