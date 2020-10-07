@@ -126,3 +126,4 @@
     },
     "develop": {}
 }
+django_heroku.settings(locals())
