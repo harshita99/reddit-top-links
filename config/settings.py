@@ -22,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = ('USE_SECRET_KEY')
-CLIENT_KEY='REDDIT_CLIENTID'
-CLIENT_KEY_SEC='REDDIT_CLIENTID_SECRET'
+CLIENT_KEY=('REDDIT_CLIENTID')
+CLIENT_KEY_SEC=('REDDIT_CLIENTID_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -151,3 +151,5 @@ SOCIAL_AUTH_LOGIN_URL = '/'
 
 
 LOGIN_REDIRECT_URL='/'
+
+django_heroku.settings(locals())
